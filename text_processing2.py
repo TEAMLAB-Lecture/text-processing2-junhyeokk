@@ -85,7 +85,7 @@ def to_camel_case(underscore_str):
                 result_list.append(c.lower())
         else:
             result_list.append(c)
-    if result_list[0].isalpha():
+    if len(result_list) != 0 and result_list[0].isalpha():
         result_list[0] = result_list[0].lower()
     camelcase_str = ''.join(result_list)
     return camelcase_str
