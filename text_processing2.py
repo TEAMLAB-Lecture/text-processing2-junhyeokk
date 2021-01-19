@@ -88,9 +88,11 @@ def to_camel_case(underscore_str):
     # if len(result_list) != 0 and result_list[0].isalpha():
     #     result_list[0] = result_list[0].lower()
     # camelcase_str = ''.join(result_list)
-
     result_list = []
-    for word in underscore_str.split('_'):
+    words_list = underscore_str.split('_')
+    if len(words_list) == 1:
+        return underscore_str
+    for word in words_list:
         result_list.append(word.capitalize())
     camelcase_str = ''.join(result_list)
     camelcase_str = camelcase_str[0].lower() + camelcase_str[1:]
