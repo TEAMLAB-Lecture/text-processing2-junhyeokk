@@ -95,5 +95,6 @@ def to_camel_case(underscore_str):
     for word in words_list:
         result_list.append(word.capitalize())
     camelcase_str = ''.join(result_list)
-    camelcase_str = camelcase_str[0].lower() + camelcase_str[1:]
+    if len(camelcase_str) > 1:
+        camelcase_str = camelcase_str[0].lower() + camelcase_str[1:]
     return camelcase_str
